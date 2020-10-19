@@ -1,0 +1,211 @@
+******************************************************************************
+                  TI ARM Linker Unix v20.2.0                   
+******************************************************************************
+>> Linked Sun Oct 18 20:46:11 2020
+
+OUTPUT FILE NAME:   <MPU.out>
+ENTRY POINT SYMBOL: "_c_int00_noinit_noargs"  address: 00000b91
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00040000  00000bd5  0003f42b  R  X
+  SRAM                  20000000   00008000  00000200  00007e00  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00000bd5   00000bd5    r-x
+  00000000    00000000    0000026c   0000026c    r-- .intvecs
+  0000026c    0000026c    00000962   00000962    r-x .text
+  00000bce    00000bce    00000007   00000007    r-- .const
+20000000    20000000    00000200   00000000    rw-
+  20000000    20000000    00000200   00000000    rw- .stack
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    0000026c     
+                  00000000    0000026c     tm4c123gh6pm_startup_ccs.obj (.intvecs)
+
+.text      0    0000026c    00000962     
+                  0000026c    000006b0     MPU.obj (.text)
+                  0000091c    0000017c     uart0.obj (.text)
+                  00000a98    0000007a     rtsv7M4_T_le_v4SPD16_eabi.lib : memset_t2.asm.obj (.text)
+                  00000b12    00000040                                   : u_divt2.asm.obj (.text)
+                  00000b52    0000003c     MPU_s.obj (.text)
+                  00000b8e    00000002     rtsv7M4_T_le_v4SPD16_eabi.lib : div0.asm.obj (.text)
+                  00000b90    0000002c                                   : boot_cortex_m.c.obj (.text:_c_int00_noinit_noargs:_c_int00_noinit_noargs)
+                  00000bbc    0000000a     tm4c123gh6pm_startup_ccs.obj (.text)
+                  00000bc6    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
+                  00000bca    00000004                                   : exit.c.obj (.text:abort:abort)
+
+.const     0    00000bce    00000007     
+                  00000bce    00000007     MPU.obj (.const:.string:$P$T0$1)
+
+.cinit     0    00000000    00000000     UNINITIALIZED
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.stack     0    20000000    00000200     UNINITIALIZED
+                  20000000    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
+                  20000004    000001fc     --HOLE--
+
+__llvm_prf_cnts 
+*          0    20000000    00000000     UNINITIALIZED
+
+MODULE SUMMARY
+
+       Module                         code   ro data   rw data
+       ------                         ----   -------   -------
+    ./
+       MPU.obj                        1712   7         0      
+       tm4c123gh6pm_startup_ccs.obj   10     620       0      
+       uart0.obj                      380    0         0      
+       MPU_s.obj                      60     0         0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         2162   627       0      
+                                                              
+    /home/avidhital/ti/ccs1000/ccs/tools/compiler/ti-cgt-arm_20.2.0.LTS/lib/rtsv7M4_T_le_v4SPD16_eabi.lib
+       memset_t2.asm.obj              122    0         0      
+       u_divt2.asm.obj                64     0         0      
+       boot_cortex_m.c.obj            44     0         0      
+       exit.c.obj                     4      0         0      
+       pre_init.c.obj                 4      0         0      
+       div0.asm.obj                   2      0         0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         240    0         0      
+                                                              
+       Stack:                         0      0         512    
+    +--+------------------------------+------+---------+---------+
+       Grand Total:                   2402   627       512    
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                   
+-------   ----                   
+00000329  BusFaultISR            
+00000bcb  C$$EXIT                
+00000349  HardFaultISR           
+00000395  MPUFaultISR            
+000004c7  PendSVHandler          
+0000026d  PrintIntToHex          
+00000bbd  ResetISR               
+00000339  UsageFaultISR          
+20000200  __STACK_END            
+00000200  __STACK_SIZE           
+20000200  __STACK_TOP            
+ffffffff  __TI_pprof_out_hndl    
+ffffffff  __TI_prof_data_size    
+ffffffff  __TI_prof_data_start   
+00000000  __TI_static_base__     
+00000b8f  __aeabi_idiv0          
+00000b8f  __aeabi_ldiv0          
+00000a99  __aeabi_memclr         
+00000a99  __aeabi_memclr4        
+00000a99  __aeabi_memclr8        
+00000a9b  __aeabi_memset         
+00000a9b  __aeabi_memset4        
+00000a9b  __aeabi_memset8        
+00000b13  __aeabi_uidiv          
+00000b13  __aeabi_uidivmod       
+ffffffff  __binit__              
+ffffffff  __c_args__             
+UNDEFED   __mpu_init             
+20000000  __stack                
+20000000  __start___llvm_prf_cnts
+20000000  __stop___llvm_prf_cnts 
+00000b91  _c_int00_noinit_noargs 
+00000bc7  _system_pre_init       
+00000bcb  abort                  
+ffffffff  binit                  
+00000000  g_pfnVectors           
+00000b5f  getMSPaddress          
+00000b59  getPSPaddress          
+00000a25  getcUart0              
+00000621  initHw                 
+0000091d  initUart0              
+0000052d  init_MPU               
+00000a39  kbhitUart0             
+00000795  main                   
+00000aa1  memset                 
+00000b73  privilegedMode         
+000009dd  putcUart0              
+000009f9  putsUart0              
+00000b81  setASPbit              
+00000b53  setPSPaddress          
+000009b1  setUart0BaudRate       
+000006ed  thread                 
+00000b65  unprivilegedMode       
+0000060d  waitPbPress            
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                   
+-------   ----                   
+00000000  __TI_static_base__     
+00000000  g_pfnVectors           
+00000200  __STACK_SIZE           
+0000026d  PrintIntToHex          
+00000329  BusFaultISR            
+00000339  UsageFaultISR          
+00000349  HardFaultISR           
+00000395  MPUFaultISR            
+000004c7  PendSVHandler          
+0000052d  init_MPU               
+0000060d  waitPbPress            
+00000621  initHw                 
+000006ed  thread                 
+00000795  main                   
+0000091d  initUart0              
+000009b1  setUart0BaudRate       
+000009dd  putcUart0              
+000009f9  putsUart0              
+00000a25  getcUart0              
+00000a39  kbhitUart0             
+00000a99  __aeabi_memclr         
+00000a99  __aeabi_memclr4        
+00000a99  __aeabi_memclr8        
+00000a9b  __aeabi_memset         
+00000a9b  __aeabi_memset4        
+00000a9b  __aeabi_memset8        
+00000aa1  memset                 
+00000b13  __aeabi_uidiv          
+00000b13  __aeabi_uidivmod       
+00000b53  setPSPaddress          
+00000b59  getPSPaddress          
+00000b5f  getMSPaddress          
+00000b65  unprivilegedMode       
+00000b73  privilegedMode         
+00000b81  setASPbit              
+00000b8f  __aeabi_idiv0          
+00000b8f  __aeabi_ldiv0          
+00000b91  _c_int00_noinit_noargs 
+00000bbd  ResetISR               
+00000bc7  _system_pre_init       
+00000bcb  C$$EXIT                
+00000bcb  abort                  
+20000000  __stack                
+20000000  __start___llvm_prf_cnts
+20000000  __stop___llvm_prf_cnts 
+20000200  __STACK_END            
+20000200  __STACK_TOP            
+ffffffff  __TI_pprof_out_hndl    
+ffffffff  __TI_prof_data_size    
+ffffffff  __TI_prof_data_start   
+ffffffff  __binit__              
+ffffffff  __c_args__             
+ffffffff  binit                  
+UNDEFED   __mpu_init             
+
+[54 symbols]
